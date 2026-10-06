@@ -1,26 +1,23 @@
 # Student Records Database
 
-A MySQL database project for managing student records and practicing core SQL queries.
+A MySQL database project containing the foundational schema, seed data, and basic queries for a student records system.
 
-## Overview
-This repository contains the schema, seed data, and practice queries for a basic student records system. It demonstrates foundational SQL skills including table creation, data insertion, and data retrieval.
+## Database Schema
 
-## Schema
-The `students` table contains the following columns:
+**students** table:
 - `id` (INT): Unique identifier for the student.
 - `name` (VARCHAR): Student's full name.
 - `city` (VARCHAR): Student's city of residence.
 - `marks` (INT): Student's academic score.
 
-## Repository Structure
-- `students.sql`: The main SQL script containing table creation, seed data, and session-based practice queries.
+## Topics Covered
+
+The script demonstrates the following SQL concepts:
+- **DDL:** Creating tables and defining data types.
+- **DML:** Inserting records into tables.
+- **DQL:** Retrieving data using `SELECT` and filtering rows with `WHERE`.
 
 ## Tools Used
 - MySQL 8.0
 - MySQL Workbench
 - Git & GitHub
-
-## Future Improvements
-- Add tables for courses and enrollments.
-- Implement JOIN operations.
-- Add aggregate functions for performance analysis.
