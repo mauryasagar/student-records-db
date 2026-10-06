@@ -15,7 +15,7 @@ A MySQL database project containing the foundational schema, seed data, and basi
 The script demonstrates the following SQL concepts:
 - **DDL:** Creating tables and defining data types.
 - **DML:** Inserting records into tables.
-- **DQL:** Retrieving data using `SELECT` and filtering rows with `WHERE`.
+- **DQL:** Retrieving data using `SELECT`, filtering with `WHERE`, sorting with `ORDER BY`, restricting rows with `LIMIT`, and finding unique values with `DISTINCT`.
 
 ## Tools Used
 - MySQL 8.0

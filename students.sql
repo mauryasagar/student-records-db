@@ -26,3 +26,19 @@ SELECT * FROM students WHERE city='Mumbai';
 
 -- Q4: Get the name and marks of students who scored 80 or less.
 SELECT name, marks FROM students WHERE marks <= 80;
+
+-- ==========================================
+-- SESSION 2: Sorting, Limiting, and Unique Values
+-- ==========================================
+
+-- Q1: Get all students, sorted by name alphabetically (A to Z).
+SELECT * FROM students ORDER BY name ASC;
+
+-- Q2: Get the name and marks of the top 2 students with the highest marks.
+SELECT name, marks FROM students ORDER BY marks DESC LIMIT 2;
+
+-- Q3: Get a list of all unique cities from the students table.
+SELECT DISTINCT city FROM students;
+
+-- Q4: Get all columns, sorted by city alphabetically. If two students live in the same city, sort them by marks descending.
+SELECT * FROM students ORDER BY city ASC, marks DESC;
