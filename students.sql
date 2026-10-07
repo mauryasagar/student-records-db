@@ -42,3 +42,19 @@ SELECT DISTINCT city FROM students;
 
 -- Q4: Get all columns, sorted by city alphabetically. If two students live in the same city, sort them by marks descending.
 SELECT * FROM students ORDER BY city ASC, marks DESC;
+
+-- ==========================================
+-- SESSION 3: Aggregate Functions and Grouping
+-- ==========================================
+
+-- Q1: Count the total number of students.
+SELECT COUNT(*) FROM students;
+
+-- Q2: Find the average marks of all students.
+SELECT AVG(marks) FROM students;
+
+-- Q3: Find the lowest and highest marks in the table.
+SELECT MIN(marks), MAX(marks) FROM students;
+
+-- Q4: Count how many students live in each city.
+SELECT city, COUNT(*) FROM students GROUP BY city;
