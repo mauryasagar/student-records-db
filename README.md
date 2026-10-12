@@ -29,6 +29,7 @@ The script demonstrates the following SQL concepts:
 - **DQL:** Retrieving data using `SELECT`, filtering with `WHERE`, sorting with `ORDER BY`, restricting rows with `LIMIT`, and finding unique values with `DISTINCT`.
 - **Aggregations:** Summarizing data using `COUNT`, `AVG`, `MIN`, `MAX`, and `GROUP BY`.
 - **Joins:** Combining data across multiple tables using `INNER JOIN` with primary and foreign key relationships.
+- **Left Joins:** Preserving unmatched rows using `LEFT JOIN` and detecting missing relationships with `IS NULL`.
 
 ## Tools Used
 - MySQL 8.0
