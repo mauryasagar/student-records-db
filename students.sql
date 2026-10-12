@@ -2,6 +2,7 @@
 -- SESSION 1: Basic SELECT and WHERE Practice
 -- ==========================================
 
+-- Create the students table with a primary key.
 CREATE TABLE students (
 id INT PRIMARY KEY,
 name VARCHAR(50),
@@ -9,6 +10,7 @@ city VARCHAR(50),
 marks INT
 );
 
+-- Insert initial student records.
 INSERT INTO students VALUES
 (1, 'Aarav', 'Delhi', 85),
 (2, 'Diya', 'Mumbai', 92),
@@ -63,18 +65,21 @@ SELECT city, COUNT(*) FROM students GROUP BY city;
 -- SESSION 4: Relational Database Design & JOINs
 -- ==========================================
 
+-- Create a courses table with a primary key.
 CREATE TABLE courses (
 	course_id INT PRIMARY KEY,
     course_name VARCHAR(50),
     instructor VARCHAR(50)
 );
 
+-- Insert the course catalog.
 INSERT INTO courses VALUES
 (1, 'SQL Basics', 'Dr. Mehta'),
 (2, 'Python', 'Prof. Rao'),
 (3, 'Web Development', 'Dr. Khan'),
 (4, 'Data Science', 'Prof. Singh');
 
+-- Create an enrollments table linking students to courses via foreign keys.
 CREATE TABLE enrollments (
 	enrollment_id INT PRIMARY KEY,
     student_id INT,
@@ -84,6 +89,7 @@ CREATE TABLE enrollments (
     FOREIGN KEY (course_id) REFERENCES courses(course_id)
 );
 
+-- Insert enrollment records.
 INSERT INTO enrollments VALUES
 (1, 1, 1, 90),
 (2, 1, 2, 85),
@@ -108,3 +114,25 @@ SELECT students.name, courses.course_name, enrollments.grade
 FROM students
 JOIN enrollments ON students.id = enrollments.student_id
 JOIN courses ON enrollments.course_id = courses.course_id;
+
+-- ==========================================
+-- SESSION 5: LEFT JOIN
+-- ==========================================
+
+-- Q1: Get every student's name and the course they are enrolled in. Include students with no enrollments (shown as NULL).
+SELECT students.name, courses.course_name
+FROM students
+LEFT JOIN enrollments ON students.id = enrollments.student_id
+LEFT JOIN courses ON enrollments.course_id = courses.course_id;
+
+-- Q2: Get every course's name and the students enrolled in it. Include courses with no students (shown as NULL).
+SELECT courses.course_name, students.name
+FROM courses
+LEFT JOIN enrollments ON courses.course_id = enrollments.course_id
+LEFT JOIN students ON enrollments.student_id = students.id;
+
+-- Q3: Get only students who have NOT enrolled in any course.
+SELECT students.name
+FROM students
+LEFT JOIN enrollments ON students.id = enrollments.student_id
+WHERE enrollments.student_id IS NULL;
